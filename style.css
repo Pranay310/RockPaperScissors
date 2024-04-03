@@ -1,0 +1,20 @@
+.choice-div{
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+.choice{
+	cursor: pointer;
+	font-size: 25px;
+}
+.choice:hover{
+	text-shadow: 0px 0px 5px black;
+}
+.score-div{
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
