@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<script>
+	// let marks = 99;
+	// let obj = {
+	// 	name : "Pranay",
+	// 	marks : 44.5 ,
+	// 	fun : function() {
+	// 		console.log(obj.marks)
+	// 	},
+	// 	obj2 : {name:"bhai"}
+	// }
+
+	// let obj3 = {
+	// 	calTax(){
+	// 		console.log("10% of Tax");
+	// 	}
+	// }
+
+
+	// obj.__proto__ = obj3;
+
+	class Parent{
+		helo(){
+			console.log("hello");
+		}
+	}
+	class Child extends Parent{
+		helloo(wear){
+			// super();
+			// console.log("Hello From Child")
+			this.wear = wear;
+			console.log(wear);
+
+		}
+	}
+	let printHello = new Child("Clothes");
+</script>
+
+</body>
+</html>

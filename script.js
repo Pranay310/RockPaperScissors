@@ -1,11 +1,16 @@
 let btn = document.querySelectorAll(".choice");
-let div = document.querySelector(".score-div");
-let result ;
+let p = document.querySelector("#description");
+// let newPara = document.createElement("p");
+let myScore = document.querySelector("#my-score");
+let compScore = document.querySelector("#comp-score");
+let myCount = 0;
+let compCount = 0;
 
 
 btn.forEach((choice)=>{
 	choice.addEventListener("click",()=>{
 		let seleChoice = choice.innerText;
+		reset(p);
 		compChoice(seleChoice);
 	})
 })
@@ -18,6 +23,7 @@ function compChoice(seleChoice){
 }
 
 function compare(genertedChoice , seleChoice){
+	let result ;
 	console.log(`Comp Choice ${genertedChoice} , Yours Choice ${seleChoice}`)
 	if(seleChoice === genertedChoice){
 		result = "Draw Play" ;
@@ -37,11 +43,23 @@ function compare(genertedChoice , seleChoice){
 			result = "You Win"
 		}else{result = "You lose"}
 	}
+	display(result)
 }
 
-let newPara = document.createElement("p");
+function display(ele) {
 
-newPara.innerText = result;
+	// body.append(newPara);
+	p.innerText = ele;
+	if(ele === "You Win"){ 
+		myCount++;
+		 myScore.innerText = myCount;
+		}else if(ele === "You lose"){
+			compCount++;
+			compScore.innerText = compCount;
+		}
 
-div.append(newPara);
-// console.log(newPara);
+}
+
+function reset(newPara) {
+	newPara.remove();
+}
